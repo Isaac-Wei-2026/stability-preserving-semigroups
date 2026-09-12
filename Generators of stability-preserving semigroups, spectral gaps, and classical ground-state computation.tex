@@ -63,8 +63,13 @@ these give ground-energy and amplitude queries, product-event
 probabilities, and classical randomized sampling of adaptive equatorial
 measurement records.
 A field perturbation also gives zero-field energy-value approximation
-schemes. We further prove an all-temperature Hamiltonian converse
-at finite spins, weighted token-graph spectral concavity resolving the
+schemes. An all-temperature converse for full Gibbs tensors characterizes
+Hermitian qubit Hamiltonians, in a fixed computational basis, as precisely
+the edgewise phase-rotated Suzuki--Fisher family up to additive scalars.
+This converse and the strict
+positive-field Gibbs-radius theorem answer two questions of Wong,
+Bravyi, Gosset, and Liu. We also extend the converse to finite spins
+and prove weighted token-graph spectral concavity resolving the
 adjacency and signless-Laplacian conjectures of Apte, Parekh, and Sud,
 and an obstruction separating connected static preservers from
 products of preserving flows.
@@ -356,8 +361,12 @@ tradition.
 The generator theorem gives the converse: up to an additive
 scalar, these are precisely the finite-qubit Hamiltonians whose
 full Gibbs tensor is Lee--Yang at every temperature
-(Theorem~\ref{eq:sf}). In particular no genuine higher-body term is
-possible under that full-tensor hypothesis. Ruelle's all-temperature converse
+(Theorem~\ref{eq:sf}). This answers negatively the question in
+\cite[Section~6, ``Beyond Suzuki--Fisher Hamiltonians'']{WBG26}:
+in the fixed computational basis, no genuine interaction supported on
+three or more qubits is compatible with the all-temperature full-tensor
+property, and the edgewise phase-rotated Suzuki--Fisher family is
+exhaustive. Ruelle's all-temperature converse
 \cite[Theorem 9]{Ruelle10} already forces pair interactions for classical
 coefficientwise Boltzmann Lee--Yang polynomials. The object here is the
 full matrix tensor of an arbitrary Hermitian Hamiltonian, including
@@ -408,8 +417,11 @@ the unrestricted inverse-polynomial-accuracy EPR problem
 algorithms that also construct states \cite{ALMPSS26}.
 
 Positive damping also proves strict zero-freeness of the actual Gibbs
-kernel and of its unique ground-state polynomial, addressing the
-qualitative radius question in \cite{WBG26}.
+kernel and of its unique ground-state polynomial.
+Theorem~\ref{eq:strict-field} answers affirmatively the question in
+\cite[Section~5.3]{WBG26}: every Suzuki--Fisher Hamiltonian with
+strictly positive longitudinal fields has a full Gibbs tensor of some
+radius $r_\beta>1$ at each inverse temperature $\beta>0$.
 The stronger proposed radius $s^{-1/2}$ for a deformed EPR ground
 state is false. Appendix~\ref{cx:section} gives an unweighted
 six-vertex tree at $s=1/2$, together with an exact rational certificate
@@ -4368,6 +4380,20 @@ the qualitative strict-radius conclusion asked for in
 radius as a function of \(s\).  Edge phases may be chosen
 independently; no simultaneous gauge removal is used in the proof.
 
+For the unweighted common-parameter model, the field calculation above
+and \cite[Theorem~1]{BGLW26} give
+\[
+ \Delta(H_s)\geq \frac{d_{\min}(G)}2(1-s^2),
+ \qquad d_{\min}(G)=\min_i\deg_G(i),
+\]
+where $\Delta$ denotes the gap between the two lowest eigenvalues.
+Thus the lower bound proposed in \cite[Conjecture~3]{WBG26} already
+follows when $d_{\min}(G)\geq2$. For graphs with leaves this estimate
+gives $(1-s^2)/2$; attaining the conjectured lower bound requires
+additional information. For stars with at least three vertices,
+equality holds in the conjectured bound by \cite[Lemma~13]{WBG26};
+the single-edge gap is $1+s^2$ by its rank-one spectrum.
+
 
 \section{All-temperature Hamiltonians at higher spins}\label{spin:section}
 
@@ -5040,6 +5066,13 @@ The qualitative strict radius in Theorem~\ref{eq:strict-field} cannot
 in general be replaced by the proposed explicit radius for deformed
 EPR ground states. We address the stronger clause of Conjecture~1 in
 \cite[Section 5.4]{WBG26}, with its stated unweighted-graph hypothesis.
+
+The computations in \cite[Numerical Study~1, equation~(70)]{WBG26}
+test the signed diagonal specializations $z_i=(-1)^{y_i}z$,
+$y\in\{0,1\}^n$, of the ground-state polynomial. The zero certified
+below lies outside every such slice: its two fixed coordinate values
+are neither equal nor opposite. The certificate therefore concerns
+points outside the family tested in that numerical study.
 
 \begin{theorem}\label{cx:epr}
 Let $G$ have vertices $\{0,1,2,3,4,5\}$ and edges

@@ -8,9 +8,9 @@ The original comprehensive manuscript has been reorganized into three companion 
 
 ## 1. Generators of stability-preserving semigroups, spectral gaps, and classical ground-state computation
 
-Finite-box generator classification and exact local-input recognition, strict spectral control, and classical ground-state computation, with Hamiltonian and token-graph applications.
+Finite-box generator classification and exact local-input recognition, strict spectral control, and classical ground-state computation, with Hamiltonian and token-graph applications. The full Gibbs-tensor Hamiltonian converse and strict positive-field radius theorem answer two questions posed in [Wong, Bravyi, Gosset, and Liu (2026), Sections 6 and 5.3](https://arxiv.org/html/2602.03605v1).
 
-**69 pages** · [PDF](Generators%20of%20stability-preserving%20semigroups%2C%20spectral%20gaps%2C%20and%20classical%20ground-state%20computation.pdf) · [LaTeX](Generators%20of%20stability-preserving%20semigroups%2C%20spectral%20gaps%2C%20and%20classical%20ground-state%20computation.tex)
+**70 pages** · [PDF](Generators%20of%20stability-preserving%20semigroups%2C%20spectral%20gaps%2C%20and%20classical%20ground-state%20computation.pdf) · [LaTeX](Generators%20of%20stability-preserving%20semigroups%2C%20spectral%20gaps%2C%20and%20classical%20ground-state%20computation.tex)
 
 ## 2. Lee-Yang preserving quantum Markov semigroups and channels
 

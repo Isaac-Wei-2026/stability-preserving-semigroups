@@ -25,8 +25,8 @@ python3 epr_independent_certificate.py
 
 Both should finish with exit status zero and their success messages. Keep Python assertions enabled: run the commands as written, without `-O` or `-OO` and without setting `PYTHONOPTIMIZE`.
 
-The two script files are unchanged from repository commit `593275b4834f3d58e2fecbc9257fc43a5bf20e77`, the fixed version cited in the manuscript's Data and code availability statement. This supplementary package adds execution instructions and checksums.
+The verification scripts and their SHA256 checksums match the `certificates/` directory at repository commit `85527775f5de8af8911941fc422dbe140a63d11a`, the certificate snapshot cited in the manuscript's Data and code availability statement. The Zenodo upload copy is named `certificates-8552777.zip`. The hash identifies the verification-code snapshot; the instructions in this README have been updated to make that correspondence explicit.
 
-The repository's `epr-certificates.zip` contains these instructions, both scripts, and `SHA256SUMS` for use as a journal supplementary file. No Zenodo DOI has been assigned.
+The repository's `epr-certificates.zip` contains these instructions, both scripts, and `SHA256SUMS` for use as a journal supplementary file.
 
 Contact: Dongsheng Wei, dongshengwei2025@icloud.com.

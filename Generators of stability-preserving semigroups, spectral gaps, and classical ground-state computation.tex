@@ -45,34 +45,27 @@
 \hypersetup{pdftitle={Generators of stability-preserving semigroups, spectral gaps, and classical ground-state computation},pdfauthor={Dongsheng Wei}}
 \begin{document}
 \begin{abstract}
-We classify all linear generators of complex stability-preserving
-semigroups on finite boxes of polynomial degrees. Their canonical
-differential order is at most two, and their coefficients have
-nonnegativity certificates of size independent of the capacities.
-For binary variables, preservation is decidable in polynomial bit time
-from a supplied sum of one-site and two-site matrices.
-Positive coordinate damping makes the actual semigroup kernel strictly
-zero-free and gives a sharp, capacity-independent real-part spectral
-gap, extending the Hermitian \(2\mu\) gap of Bravyi, Gosset, Liu, and
-Wong to arbitrary complex stability-preserving generators.
-For bounded-degree local inputs at fixed norm and positive damping,
-the resulting analytic domain yields deterministic classical
-algorithms for the principal eigenvalue and relative stable product
-tests of its eigenvectors. Applied to Suzuki--Fisher Hamiltonians,
-these give ground-energy and amplitude queries, product-event
-probabilities, and classical randomized sampling of adaptive equatorial
-measurement records.
-A field perturbation also gives zero-field energy-value approximation
-schemes. An all-temperature converse for full Gibbs tensors characterizes
-Hermitian qubit Hamiltonians, in a fixed computational basis, as precisely
-the edgewise phase-rotated Suzuki--Fisher family up to additive scalars.
-This converse and the strict
-positive-field Gibbs-radius theorem answer two questions of Wong,
-Bravyi, Gosset, and Liu. We also extend the converse to finite spins
-and prove weighted token-graph spectral concavity resolving the
-adjacency and signless-Laplacian conjectures of Apte, Parekh, and Sud,
-and an obstruction separating connected static preservers from
-products of preserving flows.
+We classify generators of complex stability-preserving semigroups on
+finite polynomial boxes and prove polynomial-time recognition from
+Gaussian-rational binary one-site and two-site inputs.
+Damping bounded below by \(\mu>0\) gives strict zero-freeness and
+a sharp, capacity-independent real-part spectral gap, extending the Hermitian
+\(2\mu\) gap of Bravyi, Gosset, Liu, and Wong.
+At bounded degree and local strength, deterministic classical algorithms
+approximate ground energies and relative amplitudes against stable product
+states for Suzuki--Fisher Hamiltonians with fixed positive longitudinal fields;
+field perturbation gives zero-field energy-value
+polynomial-time approximation schemes for Einstein--Podolsky--Rosen
+(EPR) and bipartite Quantum MaxCut on unweighted graphs.
+An all-temperature converse for full Gibbs tensors characterizes
+Hermitian qubit Hamiltonians, in a fixed basis, as precisely the
+edgewise phase-rotated Suzuki--Fisher family up to scalars.
+Together with strict positive-field Gibbs radii, this answers two
+questions of Wong, Bravyi, Gosset, and Liu.
+Weighted token-graph spectral concavity resolves the adjacency and
+signless-Laplacian conjectures of Apte, Parekh, and Sud.
+An exact certificate disproves the stronger proposed EPR ground-state
+radius.
 \end{abstract}
 \maketitle
 \clearpage
@@ -284,8 +277,8 @@ classical algorithm in time
        \bigl(n,\delta^{-1},\text{input bit length}\bigr).
 \]
 This is Theorem~\ref{alg:complex}. The matrix has exponentially many
-entries, but the input is its sparse local description. There is no
-claim of a running time polynomial uniformly in $\mu^{-1}$.
+entries, but the input is its sparse local description. The polynomial
+degree may depend on $d,J,\mu$.
 
 The same local input also gives relative access to the principal
 eigenvectors. Normalize the right and transpose-left vectors $v,w$
@@ -394,27 +387,19 @@ Quantum MaxCut. For both unweighted classes, the estimate gives a deterministic
 $(1-\varepsilon)$ approximation to the optimum value, with polynomial
 running time for every fixed $\varepsilon>0$.
 
-Earlier classical algorithms treat important subclasses of quantum
-ferromagnets \cite{BG17,HMS20}. The broader classical computation
-question is stated in \cite{BGLW26}; a related interpolation strategy
-was announced in \cite{WongTalk23}, with further background in
-\cite{WongThesis26}.
-Relative \(X\)-basis amplitudes, phases, and
-measurement marginals already appear in
-\cite[Section~4]{WBG26}, for general Lee--Yang states with a fixed
-spatial zero-free radius greater than one and state-dependent
-quasipolynomial circuits. Here the local Hamiltonian is the input,
-the field is any fixed positive constant, and the complexity is
-polynomial; a size-independent spatial radius margin is not assumed.
-The new analytic input is the nonvanishing reciprocal-field domain
-for the principal-state tests. It is distinct from the thermal
-partition-function domains used for product measurements in
-\cite[Theorem~15]{YYZ22}.
-The zero-field energy-value scheme does not
-prepare an approximately optimal quantum state. It does not solve
-the unrestricted inverse-polynomial-accuracy EPR problem
-\cite{MarwahaSud26}, and it is not a replacement for approximation
-algorithms that also construct states \cite{ALMPSS26}.
+Earlier classical algorithms cover quantum-ferromagnet subclasses
+\cite{BG17,HMS20}; the broader classical computation question appears
+in \cite{BGLW26}, and related interpolation ideas in
+\cite{WongTalk23,WongThesis26}.
+Relative amplitudes and marginals were treated in
+\cite[Section~4]{WBG26} using a fixed spatial zero-free margin,
+and thermal product measurements in \cite[Theorem~15]{YYZ22}; here a
+reciprocal-field analytic domain gives polynomial-time queries from
+the local Hamiltonian at any fixed positive field.
+For EPR and bipartite Quantum MaxCut on unweighted graphs, the zero-field conclusion
+concerns fixed-relative-error energy values, whereas
+\cite{MarwahaSud26} asks for inverse-polynomial absolute
+accuracy and \cite{ALMPSS26} constructs approximating states.
 
 Positive damping also proves strict zero-freeness of the actual Gibbs
 kernel and of its unique ground-state polynomial.
@@ -447,8 +432,7 @@ of passing from an infinitesimal classification to static operators.
 
 The coefficient-positive preservation problem and physical quantum
 Markov dynamics have their own generator cones and analytic hypotheses.
-They are developed in companion manuscripts
-\cite{WeiPositive2026,WeiQuantum2026}. The present paper is confined to
+These topics are outside the scope of the present paper, which is confined to
 finite boxes and the spectral and computational consequences of
 preserving the full complex stable class.
 
@@ -507,7 +491,7 @@ determines $\alpha!P_\alpha$ after all lower terms are known. The phrase
 A finite-dimensional generator $A$ preserves a class when $e^{tA}$
 preserves it for all $t\geq0$. All generator and spectral statements here act on finite-dimensional
 polynomial boxes. Positive dynamics at infinite capacities and their
-analytic generation are studied separately in \cite{WeiPositive2026}.
+analytic generation are outside the scope of this paper.
 
 \begin{definition}[Complete stability preservation]\label{pre:complete}
 An operator is \emph{completely stable} if its tensor product with the
@@ -2605,11 +2589,20 @@ In the occupation basis, the same block matrices arise from
  \mathsf B_a(G)=\frac12\sum_{ij}w_{ij}
  \bigl[X_iX_j+Y_iY_j+a(I-Z_iZ_j)\bigr].
 \]
-Thus its maximum energy over fixed particle number is concave in
-that number. The negative Hamiltonian has the corresponding convex
+Equivalently, for the XXZ Hamiltonian
+\[
+ H_\Delta(G)=\frac12\sum_{ij}w_{ij}
+   \bigl(X_iX_j+Y_iY_j+\Delta Z_iZ_j\bigr)
+ =\mathsf B_{-\Delta}(G)+\frac\Delta2\sum_{ij}w_{ij}I,
+\]
+the maximum energies in the magnetization sectors
+\(\sum_i Z_i=n-2k\) form a concave sequence for \(|\Delta|\le1\).
+Indeed, the sector maxima are
+\(\Lambda_k(-\Delta)+(\Delta/2)\sum_{ij}w_{ij}\), with an additive
+constant independent of \(k\). The negative Hamiltonian has convex
 sector ground-state energies. At \(a=1\), the common one-qubit
 rotation \(R=e^{-\mathrm i\pi X/4}\), with
-\(RYR^*=Z\) and \(RZR^*=-Y\), identifies this operator with the
+\(RYR^*=Z\) and \(RZR^*=-Y\), identifies \(\mathsf B_1(G)\) with the
 EPR Hamiltonian in \cite{APS26}. There is a
 maximum-energy state in a half-filled sector in the rotated basis.
 This locates a maximizing sector; it does not give an efficient
@@ -2728,6 +2721,16 @@ In particular, after substitution the coefficient computation takes
 arithmetic operations, up to polynomial factors in the coefficient
 order. The constant implicit in \(O_D\) retains the graph-degree
 dependence of the perturbation algorithm.
+In compact form, the same arithmetic bound is
+\[
+ n\left(2+\frac{C_{d,J,\mu}n}{\delta}\right)^%
+ {O_d(1+(J/\mu)^2)},
+\]
+up to polynomial factors in the coefficient order, with the bit
+overhead specified in Appendix~\ref{alg:energy-bit-details}.
+For fixed inverse-polynomial accuracy \(\delta=n^{-b}\), this is
+\(n^{O_{d,b}(1+(J/\mu)^2)}\), up to a parameter-dependent factor
+and polynomial factors in the coefficient order.
 The large constants in \eqref{alg:parameters} are inherited from
 the perturbation estimate.  They are sufficient for a complexity
 statement, not a claim of practical efficiency.  In particular,
@@ -2862,9 +2865,8 @@ simple eigenvalue of \(H_0\).  The identity theorem applied to
 \[
  \det\bigl(H_0+xV-F_V(x)\Id\bigr)
  \]
-therefore proves the eigenvalue identity on the entire disk.
-This step does not assert simplicity there or make any ordering
-claim about the other eigenvalues.
+therefore proves the eigenvalue identity on the entire disk,
+providing an analytic eigenvalue branch there.
 
 For the coefficient algorithm, take the distinct rational nodes
 \[
@@ -4376,8 +4378,8 @@ theorem to obtain the stated uniqueness and radius.
 
 For a common deformation parameter \(s<1\), the corollary gives
 the qualitative strict-radius conclusion asked for in
-\cite[Conjecture~1]{WBG26}.  It does not assert a prescribed sharp
-radius as a function of \(s\).  Edge phases may be chosen
+\cite[Conjecture~1]{WBG26}.  The radius may depend on the graph
+and its parameters.  Edge phases may be chosen
 independently; no simultaneous gauge removal is used in the proof.
 
 For the unweighted common-parameter model, the field calculation above
@@ -5045,9 +5047,9 @@ $H_n^0$.
 
 \begin{remark}\label{glob:scope}
 The identity for the closure in \eqref{glob:reversible-parts} is
-$T_n\cap T_n^{-1}=H_n^0$.  It does not assert
-$T_n\cap H_n=H_n^0$ for arbitrary units of the larger semigroup;
-finite order supplies the inverse inclusion needed for permutations.
+$T_n\cap T_n^{-1}=H_n^0$.  This equality concerns elements whose
+inverses also belong to $T_n$; finite order supplies this inverse
+inclusion for permutations.
 The result concerns flows of the infinitesimal cone.  Static apolar maps
 may lie on other branches: for $F(s,t)=s-t$,
 $B_F=\pi-I$, so $I+B_F=\pi$, whereas
@@ -5055,8 +5057,7 @@ $B_F=\pi-I$, so $I+B_F=\pi$, whereas
  e^{tB_F}=\frac{1+e^{-2t}}2I+\frac{1-e^{-2t}}2\pi.
 \]
 Allowing such a static permutation as an additional primitive changes
-the factorization question.  No description of the remaining
-noninvertible boundary or the nonunit part of $T_n$ is claimed.
+the factorization question.
 \end{remark}
 
 
@@ -5096,8 +5097,8 @@ unweighted six-vertex tree.
 
 \begin{proof}
 We give rational spectral and zero certificates. All inequalities
-below are verified by the finite procedure at the end of this
-appendix, using only integer arithmetic and exact fractions.
+below are verified by the supplementary finite procedure described
+at the end of this appendix, using only integer arithmetic and exact fractions.
 
 Write $K=-H$. Index the computational basis by integers
 $b\in\{0,\ldots,63\}$, with bit $b_i$ at vertex $i$.
@@ -5225,127 +5226,33 @@ It does not treat a rounded eigenvector as an exact eigenvector.
 The existence of some radius greater than one, proved above by
 positive-field strictification, is compatible with this example.
 
-\subsection*{Complete finite verification procedure}
-The following standard-library Python procedure reproduces all
-rational assertions used in the proof. The operations implementing
-a Gaussian rational number are written explicitly. Floating-point
-arithmetic and numerical eigenvalue computations are not used.
-The same source is supplied as
-\path{certificates/epr_six_vertex_certificate.py}; a second,
-independent rational certificate is included with the source package.
-\begin{lstlisting}[basicstyle=\ttfamily\scriptsize,breaklines=true,
- columns=fullflexible,keepspaces=true,showstringspaces=false,
- language=Python,frame=single]
-"""Exact standard-library certificate: a zero strictly inside radius sqrt(2).
+\subsection*{Reproducible rational verification}
+The supplementary Python procedure
+\path{epr_six_vertex_certificate.py} reproduces the inertia, residual,
+and zero inequalities used above from the displayed rational data.
+It uses only standard-library integer and fraction arithmetic;
+Gaussian-rational operations are written explicitly.
+The supplementary procedure \path{epr_independent_certificate.py}
+provides a second exact verification. Its floating-point diagnostics
+are separate from the rational assertions used in the proof.
+Both procedures are supplied with execution instructions and are
+available at the fixed repository version identified below.
 
-No floating point or numerical eigensolver is used in any assertion.
-K is the negative EPR Hamiltonian at s=1/2 on edges 01,02,03,14,15.
-"""
-from fractions import Fraction as F
 
-EDGES = [(0, 1), (0, 2), (0, 3), (1, 4), (1, 5)]
-N = 64
-K = [[F(0) for _ in range(N)] for _ in range(N)]
-for b in range(N):
-    for i, j in EDGES:
-        bi, bj = (b >> i) & 1, (b >> j) & 1
-        if bi == bj:
-            for out in (0, 1):
-                c = (b & ~(1 << i) & ~(1 << j)) | (out << i) | (out << j)
-                K[c][b] += F(1, 2) ** (bi + out)
-assert all(K[i][j] == K[j][i] for i in range(N) for j in range(N))
-
-# Exact inertia proves that all but the largest eigenvalue are below 37/8.
-def charge(b):
-    return sum((b >> j) & 1 for j in (0, 4, 5)) - sum((b >> j) & 1 for j in (1, 2, 3))
-
-assert all(not K[i][j] or charge(i) == charge(j) for i in range(N) for j in range(N))
-
-negative = 0
-pivot_signs = []
-for q in range(-3, 4):
-    sector = [b for b in range(N) if charge(b) == q]
-    A = [[F(37 if i == j else 0) - 8 * K[i][j] for j in sector] for i in sector]
-    signs = []
-    for i in range(len(sector)):
-        pivot = A[i][i]
-        assert pivot != 0
-        negative += pivot < 0
-        signs.append('+' if pivot > 0 else '-')
-        for j in range(i + 1, len(sector)):
-            for k in range(j, len(sector)):
-                A[k][j] -= A[j][i] * A[k][i] / pivot
-                A[j][k] = A[k][j]
-    pivot_signs.append((q, ''.join(signs)))
-assert negative == 1
-assert K[0][0] == 5
-
-states = [(0,0,0,0),(0,0,1,1),(0,0,2,2),(0,1,0,1),(0,1,1,2),
-          (1,0,1,0),(1,0,2,1),(1,1,0,0),(1,1,1,1),(1,1,2,2)]
-numerators = [1000000000000000,8942179087130,136748346620,171232824560490,
-              2452435031309,171232824560490,2452435031309,97255575326164,
-              37858301388951,1200949534669]
-amps = {state:F(num,10**15) for state,num in zip(states,numerators)}
-v = []
-for b in range(N):
-    state = ((b >> 0)&1,(b >> 1)&1,((b >> 2)&1)+((b >> 3)&1),
-             ((b >> 4)&1)+((b >> 5)&1))
-    v.append(amps.get(state,F(0)))
-assert v[0] == 1
-lam = F(539109343678406,10**14)
-r = [sum(K[i][j] * v[j] for j in range(N)) - lam*v[i] for i in range(N)]
-assert sum(x*x for x in r) < F(1,10**24)
-assert lam - F(37,8) > F(1,2)
-
-# Therefore the orthogonal projection v_g onto the true top eigenspace
-# obeys ||v-v_g||_2 < 2*10^-12. In particular v_g is nonzero.
-
-def add(x,y): return x[0]+y[0],x[1]+y[1]
-def mul(x,y): return x[0]*y[0]-x[1]*y[1],x[0]*y[1]+x[1]*y[0]
-def scale(c,x): return c*x[0],c*x[1]
-def norm2(x): return x[0]*x[0]+x[1]*x[1]
-
-zc=(F(175105,10**6),F(981180,10**6))
-zl=(F(-379834,10**6),F(921467,10**6))
-certified_radius=F(499,500)
-assert norm2(zc)<certified_radius**2 and norm2(zl)<certified_radius**2
-fixed=[zc,zc,zl,zl,zl]
-A=(F(0),F(0));B=(F(0),F(0))
-for b in range(N):
-    if not v[b]: continue
-    degree=b.bit_count()
-    assert degree%2==0
-    term=(v[b]*2**(degree//2),F(0))
-    for j in range(5):
-        if (b>>j)&1: term=mul(term,fixed[j])
-    if (b>>5)&1:B=add(B,term)
-    else:A=add(A,term)
-
-# These wide rational bounds leave much more room than the eigenvector error.
-assert norm2(A) < F(85,1000)**2
-assert norm2(B) > F(852,10000)**2
-
-# At the five fixed coordinates each monomial has modulus<1, and tilting
-# by sqrt(2) multiplies each even coefficient by at most8. Each linear
-# coefficient A or B involves at most32 terms. Thus replacing v by v_g
-# changes A and B by less than 32*8*2e-12 < 1e-8.
-err=F(1,10**8)
-assert 32*8*F(2,10**12) < err
-assert F(85,1000)+err < F(852,10000)-err
-assert F(85,1000)+err < certified_radius*(F(852,10000)-err)
-
-print('PASS: exact inertia has one negative pivot:',pivot_signs)
-print('PASS: squared eigenvector residual < 10^-24')
-print('PASS: |A_v|<85/1000 and |B_v|>852/10000')
-print('PASS: true ground polynomial has all |z_i|<499/500 after sqrt(2) scaling')
-\end{lstlisting}
-
+\section*{Data and code availability}
+All rational certificate data are included in Appendix~\ref{cx:section}.
+The two verification procedures are supplied as supplementary material
+and available in the \texttt{certificates} directory of a
+\href{https://github.com/Isaac-Wei-2026/stability-preserving-semigroups/tree/593275b4834f3d58e2fecbc9257fc43a5bf20e77/certificates}{fixed GitHub version}
+(commit \texttt{593275b}).
+The procedures use Python~3 and its standard library.
 
 \section*{Disclosure of artificial intelligence use}
 Most of the mathematical content, proofs, computational certificates,
 and text in this article were generated with substantial assistance from
 OpenAI GPT-6 Pro in ChatGPT chat mode and GPT-6 Astra in Codex, both
-using the ultra reasoning setting. These were the only AI tools used.
+using the ultra reasoning setting. Claude Fable 5.1 in chat mode also
+provided several rounds of revision suggestions.
 The author organized and directed the research through repeated
 interactions, including questions, choices of research directions,
 requests for extensions and critical review, and selection and
@@ -5546,14 +5453,6 @@ Alexander Turbiner, \emph{{Lie}-algebraic approach to the theory of polynomial
   and Peter~J. Olver, eds.), Contemporary Mathematics, vol. 160, American
   Mathematical Society, Providence, RI, 1994, Revised author version:
   arXiv:funct-an/9301001v2 (1998), pp.~263--310.
-
-\bibitem{WeiQuantum2026}
-Dongsheng Wei, \emph{{Lee--Yang} preserving quantum {Markov} semigroups and
-  channels}, Companion manuscript, 2026.
-
-\bibitem{WeiPositive2026}
-\bysame, \emph{Positive stability-preserving semigroups and particle
-  capacities}, Companion manuscript, 2026.
 
 \bibitem{WildAlhambra23}
 Dominik~S. Wild and {\'A}lvaro~M. Alhambra, \emph{Classical simulation of
